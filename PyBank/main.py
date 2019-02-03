@@ -58,8 +58,13 @@ newvar = revchglist[1:]
 avglist = round(sum(newvar)/len(newvar), 2)
 
 #Print the output
+print("Financial Analysis")
+print("----------------------------")
 print("Total Months: " + str(line_count))
 print("Total: $" + str(PandL_count))
 print("Average Change: $" + str(avglist))
 print("Greatest Increase in Profits: " + (finaldate) + ", " + "($" + str(finalmax) + ")")
 print("Greatest Decrease in Profits: " + (finaldate2) + ", " + "($" + str(finalmin) + ")")
+
+#set variable for output file
+output_file = os.path.join("..","pyBank","pybank_output.txt")
