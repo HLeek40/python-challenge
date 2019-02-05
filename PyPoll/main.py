@@ -52,7 +52,7 @@ with open(election_data, newline="") as csvfile:
             candidate_votes[candidate] = 1
 
 #Print the output
-print("Financial Analysis")
+print("Election Results")
 print("----------------------------")
 print("Total Votes: "+ str(total_votes))
 
@@ -60,7 +60,7 @@ print("----------------------------")
 
 for candidate in candidate_votes:
     vote = candidate_votes[candidate]
-    percentage = (vote * 100)/float(total_votes)
+    percentage = round((vote * 100)/float(total_votes),1)
     if vote > max_votes:
         max_votes = vote
         winner = candidate
@@ -70,3 +70,16 @@ print("----------------------------")
 print("Winner: " + winner)
 print("----------------------------")         
 
+#set variable for output file
+output_file = os.path.join("..","pyPoll","PyPollOutput.txt")
+
+#open the output file
+with open("PyPollOutput.txt", "w") as text_file:
+        text_file.write("Election Results")
+        text_file.write("----------------------------")
+        text_file.write("Total Votes: "+ str(total_votes))
+        text_file.write("----------------------------")
+        text_file.write(candidate + ": " + str(percentage)+ "% " + "(" + str(vote) + ")")
+        text_file.write("----------------------------")    
+        text_file.write("Winner: " + winner)
+        text_file.write("----------------------------")  
