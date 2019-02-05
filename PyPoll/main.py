@@ -51,8 +51,12 @@ with open(election_data, newline="") as csvfile:
         else:
             candidate_votes[candidate] = 1
 
-print(total_votes)
+#Print the output
+print("Financial Analysis")
+print("----------------------------")
+print("Total Votes: "+ str(total_votes))
 
+print("----------------------------")
 
 for candidate in candidate_votes:
     vote = candidate_votes[candidate]
@@ -61,7 +65,8 @@ for candidate in candidate_votes:
         max_votes = vote
         winner = candidate
 
-    print(candidate  + str(vote) + str(percentage))
-print("Winner:" + winner)
-        
+    print(candidate + ": " + str(percentage)+ "% " + "(" + str(vote) + ")")
+print("----------------------------")    
+print("Winner: " + winner)
+print("----------------------------")         
 
