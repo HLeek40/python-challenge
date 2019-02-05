@@ -67,4 +67,17 @@ print("Greatest Increase in Profits: " + (finaldate) + ", " + "($" + str(finalma
 print("Greatest Decrease in Profits: " + (finaldate2) + ", " + "($" + str(finalmin) + ")")
 
 #set variable for output file
-output_file = os.path.join("..","pyBank","pybank_output.txt")
+output_file = os.path.join("..","pyBank","PybankOutput.txt")
+
+#open the output file
+with open("PybankOutput.txt", "w") as text_file:
+        text_file.write("Financial Analysis")
+        text_file.write("----------------------------")
+        text_file.write("Total Months: " + str(line_count))
+        text_file.write("Total: $" + str(PandL_count))
+        text_file.write("Average Change: $" + str(avglist))
+        text_file.write("Greatest Increase in Profits: " + (finaldate) + ", " + "($" + str(finalmax) + ")")
+        text_file.write("Greatest Decrease in Profits: " + (finaldate2) + ", " + "($" + str(finalmin) + ")")
+
+   
+    
